@@ -1,7 +1,7 @@
 {
-  "name": "occf-42",
-  "displayName": "occf-42",
-  "description": "It's for 42 student  studying CPP",
+  "name": "cpp-42",
+  "displayName": "cpp-42",
+  "description": "42 C++ project assistant: Automate repetitive tasks.",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.91.0"
@@ -15,12 +15,18 @@
   "contributes": {
     "commands": [
       {
-        "command": "occf-42.helloWorld",
-        "title": "Hello World"
+        "command": "occf-42.scaffold-cpp-module",
+        "title": "occf-42: Scaffold CPP module"
       },
       {
-        "command": "cpp-scaffold",
-        "title": "Scaffold C++ Project"
+        "command": "occf-42.createClass",
+        "title": "occf-42: create a new Class"
+      }
+    ],
+    "snippets": [
+      {
+        "language": "cpp",
+        "path": "./snippets/snippets.code-snippets"
       }
     ]
   },

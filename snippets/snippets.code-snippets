@@ -13,7 +13,6 @@
 			"#pragma once\n",
 			"class ${TM_FILENAME_BASE} {",
 			"\tprivate:\n",
-			"\t\t$2"
 			"\tpublic:",
 			"\t\t${TM_FILENAME_BASE}();",
 			"\t\t${TM_FILENAME_BASE}(const ${TM_FILENAME_BASE} &$1);",
@@ -37,11 +36,27 @@
 			"}\n",
 			"${TM_FILENAME_BASE}& ${TM_FILENAME_BASE}::operator=(const ${TM_FILENAME_BASE} &$1) {",
 			"",
-			"\treturn (*this);"
+			"\treturn (*this);",
 			"}\n",
 			"${TM_FILENAME_BASE}::~${TM_FILENAME_BASE}() {",
 			"",
 			"}\n"
 		]
+	},
+	"42cppMakefile": {
+		"scope": "cpp,makefile,Makefile",
+		"prefix": "make42",
+		"body": ["CC = c++",
+		"CPP_FLAGS = -Wall -Wextra -Werror -std=c++98",
+		"",
+		"NAME = $1",
+		"",
+		"ALL: $(NAME)",
+		"",
+		"$(NAME): $(OBJS)",
+			"\t@$(CC) $(CFLAGS) $(OBJS) -o $(NAME)",
+		"%.cpp: %.o",
+		"\t@$(CC) $(CFLAGS) -c $< -o $@"
+	]
 	}
 }
